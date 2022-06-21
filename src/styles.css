@@ -11,16 +11,17 @@
 
 /*Table of contents
     1. Global Styles
-     1.1 Reusables
-    2. Typography
-    3. Layout
-    4. Areas
-     4.1. Header
-     4.2. Main index
-     4.3. Main recipe
-     4.4. Main calculator
-     4.5. Footer
-    5. Media Queries  */
+    2. Reusables
+    3. Typography
+    4. Layout
+    5. Areas
+     5.1. Header
+     5.2. Main index
+     5.3. Main recipe
+     5.4. Main calculator
+     5.5. Footer
+    6. Animations
+    7. Media Queries  */
 
 /*----------------1. Global Styles -------------------------------------------------------*/
 :root {
@@ -43,7 +44,7 @@ body {
 
 }
 
-/*----------------1.1 Reusables ----------------------------------------------------------*/
+/*----------------2. Reusables -----------------------------------------------------------*/
 
 a,
 a:visited,
@@ -106,7 +107,7 @@ button:hover {
     justify-content: space-between;
 }
 
-/*----------------2. Typography ----------------------------------------------------------*/
+/*----------------3. Typography ----------------------------------------------------------*/
 
 h2 {
     font-family: "Austein", "Lucida Handwriting", cursive;
@@ -128,7 +129,7 @@ h6 {
 }
 
 
-/*----------------3. Layout --------------------------------------------------------------*/
+/*----------------4. Layout --------------------------------------------------------------*/
 main,
 header,
 footer,
@@ -151,11 +152,15 @@ footer,
 }
 
 
-/*----------------4. Areas ---------------------------------------------------------------*/
-/*----------------4.1. Header ------------------------------------------------------------*/
+/*----------------5. Areas ---------------------------------------------------------------*/
+/*----------------5.1. Header ------------------------------------------------------------*/
 
 header {
     background-color: var(--lightgrey);
+    /*position: fixed;*/
+    height: 100vh;
+    z-index: 800;
+    transition: all 2s ease-in-out;
 }
 
 .header-nav {
@@ -181,7 +186,11 @@ nav > ul {
     justify-content: space-between;
 }
 
-/*----------------4.2. Main index --------------------------------------------------------*/
+/*----------------5.2. Main index --------------------------------------------------------*/
+
+#main-homepage {
+    padding: 0;
+}
 
 #main-background-image {
     background-image: url("./assets/images/hero-image.jpg");
@@ -251,7 +260,7 @@ nav > ul {
     gap: 20px; /*40px*/
 }
 
-/*----------------4.3. Main recipe -------------------------------------------------------*/
+/*----------------5.3. Main recipe -------------------------------------------------------*/
 
 #main-recipe {
     flex-basis: 1400px;
@@ -284,7 +293,7 @@ article {
 }
 
 
-/*----------------4.4. Main calculator ---------------------------------------------------*/
+/*----------------5.4. Main calculator ---------------------------------------------------*/
 
 #main-calculator {
     flex-basis: 1400px;
@@ -306,7 +315,7 @@ article {
     background-size: 24px;
     padding-right: 15px;
 }
-/*----------------4.5. Footer ------------------------------------------------------------*/
+/*----------------5.5. Footer ------------------------------------------------------------*/
 
 footer {
     background-color: var(--darkblue);
@@ -353,7 +362,44 @@ footer > section > ul > li a:visited {
     width: 20px;
 }
 
-/*----------------5. Media Queries -------------------------------------------------------*/
+/*----------------6. Animations ----------------------------------------------------------*/
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    position: static;
+    background-color: yellow;
+    height: 0;
+    width: 0;
+    z-index: 700;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: spin 2.5s linear 2s infinite;
+    background-color: rgba(0,0,0,0.0);
+    height: 30px;
+    width: 30px;
+    border: 5px solid rgba(92,138,149,0.5);
+    border-bottom: 5px solid var(--lightblue);
+    border-radius: 50%;
+}
+
+.open-page{
+    /*position: static;*/
+    height: 7vh;
+}
+/*----------------7. Media Queries -------------------------------------------------------*/
 
 
 h1 {
