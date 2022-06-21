@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <title>Recipe Details</title>
 </head>
 <body>
-<header class="outer-container">
-    <div class="inner-container">
-        <h1>the clueless cook</h1>
+<header>
+    <div class="header-nav">
+        <h2>the clueless cook</h2>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,50 +20,74 @@
 </header>
 <main>
     <section class="inner-container" id="main-recipe">
-        <h2>recipe name here</h2>
-        <img src="./assets/icons/time.png" alt="time icon">
-        <p id="main-recipe-time">20 min.</p>
-        <article class="main-recipe-step">
+        <div id="main-recipe-title">
+            <h1>recipe name here</h1>
+            <img src="./assets/icons/time.png" alt="time icon">
+            <p id="main-recipe-time">20 min.</p>
+        </div>
+        <article id="main-recipe-site">
         </article>
-        <article class="main-recipe-nutrient">
+        <article>
+            <div>
+                <h3>Ingredients</h3>
+                <ul id="main-recipe-ingredients"></ul>
+            </div>
+            <div>
+                <h3>Nutrients</h3>
+                <table id="main-recipe-nutrients"></table>
+            </div>
         </article>
-        <article class="main-recipe-label">
+        <article>
+            <h3>Health labels</h3>
+            <ul id="health-labels"></ul>
         </article>
     </section>
 </main>
-<footer class="outer-container">
-    <div class="inner-container">
+<footer>
+    <section>
         <ul>
-            <li class="footer-title">Home</li>
+            <li class="footer-title"><h4>Home</h4></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
+            <li class="footer-title"><h4>Calculator</h4></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
+            <li class="footer-title"><h4>Calculator</h4></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
-            <li class="footer-icon"><a href="index.html"><img src="./assets/icons/facebook.png" alt="facebook icon"></a>
+            <li class="footer-title"><h4>Calculator</h4></li>
+            <li class="footer-icon">
+                <a href="index.html">
+                    <img src="./assets/icons/facebook.png" alt="facebook icon">
+                </a>
             </li>
-            <li class="footer-icon"><a href="recipe.html"><img src="./assets/icons/instagram.png" alt="instagram icon"></a>
+            <li class="footer-icon">
+                <a href="recipe.html">
+                    <img src="./assets/icons/instagram.png" alt="instagram icon">
+                </a>
             </li>
-            <li class="footer-icon"><a href="calculator.html"><img src="./assets/icons/linkedin.png"
-                                                                   alt="linkedin icon"></a></li>
-            <li class="footer-icon"><a href="calculator.html"><img src="./assets/icons/twitter.png" alt="twitter icon"></a>
+            <li class="footer-icon">
+                <a href="calculator.html">
+                    <img src="./assets/icons/linkedin.png" alt="linkedin icon">
+                </a>
+            </li>
+            <li class="footer-icon">
+                <a href="calculator.html">
+                    <img src="./assets/icons/twitter.png" alt="twitter icon">
+                </a>
             </li>
         </ul>
-    </div>
+    </section>
 </footer>
 <script type="module" src="main2.js"></script>
 </body>

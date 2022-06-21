@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-@font-face{
+@font-face {
     font-family: 'Austein';
     src: url('./assets/fonts/Austein/Austein.woff2') format('woff2'),
     url('./assets/fonts/Austein/Austein-Script.woff') format('woff');
@@ -9,10 +9,353 @@
 
 }
 
-body{
-    color: blue;
+/*Table of contents
+    1. Global Styles
+     1.1 Reusables
+    2. Typography
+    3. Layout
+    4. Areas
+     4.1. Header
+     4.2. Main index
+     4.3. Main recipe
+     4.4. Main calculator
+     4.5. Footer
+    5. Media Queries  */
+
+/*----------------1. Global Styles -------------------------------------------------------*/
+:root {
+    --darkblue: #283E53; /*charcoal*/
+    --lightblue: #5C8A95; /*steel teal*/
+    --lightgrey: #F3F3F3; /*cultured*/
+    --font-size1: 14px;
+    --font-size2: 16px;
+    --font-size3: 20px;
 }
 
-h1{
+body {
+    font-family: Poppins, "Roboto Light", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*----------------1.1 Reusables ----------------------------------------------------------*/
+
+a,
+a:visited,
+a:link {
+    text-decoration: none;
+    color: var(--darkblue);
+}
+
+button {
+    font-size: var(--font-size3);
+    text-transform: capitalize;
+    color: var(--darkblue);
+    background-color: var(--lightblue);
+    border: 1px solid var(--darkblue);
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*margin: 0 25px;*/
+    background-image: url("./assets/icons/time.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 95%;
+    background-size: 24px;
+    padding-right: 30px;
+}
+
+button a {
+    color: var(--darkblue);
+}
+
+select,
+input {
+    font-size: var(--font-size3);
+    border-radius: 5px;
+    border: 1px solid var(--darkblue);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 15px;
+    appearance: none;
+    background-image: url("./assets/icons/time.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    /*background-position-x: 100%;*/
+}
+
+input::placeholder {
+    padding-left: 5px;
+}
+
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
+.main-card-subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*----------------2. Typography ----------------------------------------------------------*/
+
+h2 {
+    font-family: "Austein", "Lucida Handwriting", cursive;
+    text-transform: capitalize;
+    /*transform: scale(.5, 1);*/
+    font-style: italic;
+    /*letter-spacing: -5px;*/
+    color: var(--darkblue);
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Poppins, "Roboto Light", sans-serif;
+    text-transform: capitalize;
+    color: var(--darkblue);
+}
+
+
+/*----------------3. Layout --------------------------------------------------------------*/
+main,
+header,
+footer,
+.outer-container {
+    width: 100%; /*flex-basis: 100%*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.inner-container {
+    width: 100%;
+    /*flex-basis: 1400px; !*misschien naar 1200px zoals in het schermontwerp*!*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 100px 0;
+}
+
+
+/*----------------4. Areas ---------------------------------------------------------------*/
+/*----------------4.1. Header ------------------------------------------------------------*/
+
+header {
+    background-color: var(--lightgrey);
+}
+
+.header-nav {
+    flex-basis: 1400px;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    flex-basis: 200px;
+    /*align-self: flex-start;*/
+}
+nav {
+    flex-basis: 400px;
+}
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*----------------4.2. Main index --------------------------------------------------------*/
+
+#main-background-image {
+    background-image: url("./assets/images/hero-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
+    /*aspect-ratio: 475/150;*/
+}
+
+.main-hero {
+    flex-basis: 1400px;
+    padding: 100px 0;
+    margin-bottom: 70px;
+    font-size: 24px;
+    z-index: -70;
+}
+
+.main-carousel {
+    flex-basis: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    position: relative;
+    top: -20px;
+}
+
+.main-carousel-card {
+    z-index: 200;
+}
+
+.main-carousel:nth-child(2) {
+    padding: 10px 0;
+    z-index: 350;
+    box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.16);
+}
+
+#main-ribbon {
+    background-color: var(--darkblue);
+    padding: 50px 0;
+}
+
+.main-search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 1400px;
+    /*gap: 30px;*/
+}
+
+#input-field {
+    flex-basis: 250px;
+    background-image: url("./assets/icons/time.png");
+}
+
+.main-search-bar > select,
+#search-button {
+    flex-basis: 200px;
+}
+
+.main-result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 1400px;
+    gap: 20px; /*40px*/
+}
+
+/*----------------4.3. Main recipe -------------------------------------------------------*/
+
+#main-recipe {
+    flex-basis: 1400px;
+}
+
+#main-recipe-title > * {
+    display: inline-block;
+}
+
+#main-recipe-title h1 {
+    margin-right: 20px;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#health-labels {
+    flex-basis: 400px;
+    list-style-type: none;
+}
+
+#health-labels > li {
+    display: inline;
+    background-color: var(--lightblue);
+    border-radius: 50%; /*50px*/
+}
+
+
+/*----------------4.4. Main calculator ---------------------------------------------------*/
+
+#main-calculator {
+    flex-basis: 1400px;
+}
+
+#input-field-calorie {
+    width: 300px;
+    background: url("./assets/icons/time.png") no-repeat right;
+    background-size: 24px;
+    padding-right: 30px;
+}
+
+
+#servings-button {
+    padding-left: 30px;
+    background-image: url("./assets/icons/time.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 24px;
+    padding-right: 15px;
+}
+/*----------------4.5. Footer ------------------------------------------------------------*/
+
+footer {
+    background-color: var(--darkblue);
+}
+
+footer > section {
+    flex-basis: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 0;
+}
+
+footer > section > ul {
+    width: 250px;
+    list-style-type: none;
+}
+
+footer > section > ul > li a,
+footer > section > ul > li a:visited {
+    color: var(--lightgrey);
+    font-size: var(--font-size1);
+    font-weight: 200;
+}
+
+.footer-title > h4 {
+    color: var(--lightblue);
+    margin-bottom: 30px;
+}
+
+.footer-icon {
+    display: inline-block;
+    background-color: var(--lightblue);
+    border-radius: 50px; /*50px*/
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.footer-icon img{
+    vertical-align: -3px;
+    width: 20px;
+}
+
+/*----------------5. Media Queries -------------------------------------------------------*/
+
+
+h1 {
     font-family: 'Poppins', cursive;
 }

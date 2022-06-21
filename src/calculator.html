@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <title>Calorie Calculator</title>
 </head>
 <body>
-<header class="outer-container">
-    <div class="inner-container">
-        <h1>the clueless cook</h1>
+<header>
+    <div class="header-nav">
+        <h2>the clueless cook</h2>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,50 +20,65 @@
 </header>
 <main>
     <section class="inner-container" id="main-calculator">
-        <h2>Calorie Calculator</h2>
-        <input type="text" name="calorieQuery" id="input-field-calorie">
-        <button type="button">Search<img src="./assets/icons/arrow.png" alt="arrow icon"></button>
-        <table class="main-calorie-product"></table>
-        <label for="servings-field">Amount
-        <input type="number" name="numberQuery" id="servings-field">
-        </label>
-        <label for="servings-button">Serving(s)
-        <button type="button" id="servings-button"><span>+</span>Add</button>
-        </label>
-        <table class="main-calorie-count">
-        </table>
+        <h1>Calorie Calculator</h1>
+        <div>
+            <input type="text" name="calorieQuery" id="input-field-calorie">
+            <button type="button">Search</button>
+        </div>
+        <table id="main-calorie-product"></table>
+        <div>
+            <label for="servings-field">Amount
+                <input type="number" name="numberQuery" id="servings-field">
+            </label>
+            <label for="servings-button">Serving(s)
+                <button type="button" id="servings-button">Add</button>
+            </label>
+        </div>
+        <table id="main-calorie-count"></table>
     </section>
 </main>
-<footer class="outer-container">
-    <section class="inner-container">
+<footer>
+    <section>
         <ul>
-            <li class="footer-title">Home</li>
+            <li class="footer-title"><h4>Home</h4></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
+            <li class="footer-title"><h4>Calculator</h4></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
+            <li class="footer-title"><h4>Calculator</h4></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="recipe.html">About</a></li>
             <li><a href="calculator.html">Calculator</a></li>
         </ul>
         <ul>
-            <li class="footer-title">Calculator</li>
-            <li class="footer-icon"><a href="index.html"><img src="./assets/icons/facebook.png" alt="facebook icon"></a>
+            <li class="footer-title"><h4>Calculator</h4></li>
+            <li class="footer-icon">
+                <a href="index.html">
+                    <img src="./assets/icons/facebook.png" alt="facebook icon">
+                </a>
             </li>
-            <li class="footer-icon"><a href="recipe.html"><img src="./assets/icons/instagram.png" alt="instagram icon"></a>
+            <li class="footer-icon">
+                <a href="recipe.html">
+                    <img src="./assets/icons/instagram.png" alt="instagram icon">
+                </a>
             </li>
-            <li class="footer-icon"><a href="calculator.html"><img src="./assets/icons/linkedin.png"
-                                                                   alt="linkedin icon"></a></li>
-            <li class="footer-icon"><a href="calculator.html"><img src="./assets/icons/twitter.png" alt="twitter icon"></a>
+            <li class="footer-icon">
+                <a href="calculator.html">
+                    <img src="./assets/icons/linkedin.png" alt="linkedin icon">
+                </a>
+            </li>
+            <li class="footer-icon">
+                <a href="calculator.html">
+                    <img src="./assets/icons/twitter.png" alt="twitter icon">
+                </a>
             </li>
         </ul>
     </section>
