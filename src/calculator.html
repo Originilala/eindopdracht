@@ -23,18 +23,31 @@
         <h1>Calorie Calculator</h1>
         <div>
             <input type="text" name="calorieQuery" id="input-field-calorie">
-            <button type="button">Search</button>
+            <button type="button" id="calorie-button">Search</button>
         </div>
-        <table id="main-calorie-product"></table>
+        <table id="main-calorie-product">
+            <tr>
+                <th>product</th>
+                <th>quantity</th>
+                <th>label</th>
+            </tr>
+        </table>
         <div>
             <label for="servings-field">Amount
                 <input type="number" name="numberQuery" id="servings-field">
             </label>
             <label for="servings-button">Serving(s)
-                <button type="button" id="servings-button">Add</button>
+                <button type="button" id="servings-button">add</button>
             </label>
         </div>
-        <table id="main-calorie-count"></table>
+        <table id="main-calorie-count">
+            <tr>
+                <th>product</th>
+                <th>calorie</th>
+                <th>fat</th>
+                <th>carbs</th>
+            </tr>
+        </table>
     </section>
 </main>
 <footer id="footer-anim">
@@ -83,7 +96,7 @@
         </ul>
     </section>
 </footer>
-<div class="spin"></div>
+<div class="spin" id="spinner"></div>
 <script type="module" src="main3.js"></script>
 </body>
 </html>
