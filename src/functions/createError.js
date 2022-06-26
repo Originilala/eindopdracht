@@ -1,6 +1,6 @@
 
 const createError = (error) => {
-    console.log(error);
+    alert(error.message);
 }
 
 export default createError;

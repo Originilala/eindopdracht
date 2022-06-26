@@ -9,7 +9,7 @@ const searchObject = {
     mealTypeVal: '',
     cuisineTypeVal: '',
     dietTypeVal: '',
-    timeVal: '1+'
+    timeVal: ''
 }
 
 

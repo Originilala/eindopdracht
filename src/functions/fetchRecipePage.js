@@ -2,7 +2,7 @@ import axios from "axios";
 import createError from "./createError.js";
 import secretKeys from "../../notes/appkey.js";
 import {addLoader, removeLoader} from "./makeLoader.js";
-import createRecipePage from "./createRecipePage.js";
+import {createRecipePage} from "./createRecipePage.js";
 
 const {recID, recKey} = secretKeys;
 

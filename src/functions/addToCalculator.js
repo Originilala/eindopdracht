@@ -4,6 +4,7 @@ import {createCalProduct, createCalList} from "./createCalculatorPage.js"
 let totalServing = [];
 let prodArr = [];
 export const addToCalculator = (product) => {
+    prodArr = [];
     const {label: products, nutrients: {CHOCDF, ENERC_KCAL, FAT}} = product.food;
     const amount = (Math.round((product.measures[0].weight) * 0.1) / 0.1);
     const carbs = (Math.round((CHOCDF) * 0.1) / 0.1);
@@ -14,8 +15,8 @@ export const addToCalculator = (product) => {
 }
 
 export const calculateCalories = (servings) => {
-    console.log(prodArr);
-    console.log(servings);
+    // console.log(prodArr);
+    // console.log(servings);
     const newArr = prodArr.map((element) => {
         totalServing.push({
             product: element.product,

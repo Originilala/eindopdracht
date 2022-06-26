@@ -28,9 +28,10 @@
     --darkblue: #283E53; /*charcoal*/
     --lightblue: #5C8A95; /*steel teal*/
     --lightgrey: #F3F3F3; /*cultured*/
-    --font-size1: 14px;
-    --font-size2: 16px;
+    --font-size1: 10px;
+    --font-size2: 14px;
     --font-size3: 20px;
+    --font-size4: 30px;
 }
 
 body {
@@ -51,25 +52,36 @@ a:visited,
 a:link {
     text-decoration: none;
     color: var(--darkblue);
+    text-transform: capitalize;
 }
 
 button {
-    font-size: var(--font-size3);
+    font-size: var(--font-size2);
     text-transform: capitalize;
+    text-align: left;
     color: var(--darkblue);
     background-color: var(--lightblue);
     border: 1px solid var(--darkblue);
     border-radius: 5px;
     padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     /*margin: 0 25px;*/
-    background-image: url("./assets/icons/time.png");
+    background-image: url("./assets/icons/thin-arrow-right.png");
+    background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: right;
-    background-position-x: 95%;
-    background-size: 24px;
-    padding-right: 30px;
+    background-position-x: 90%;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+#servings-button {
+    padding-left: 40px;
+    padding-right: 15px;
+    background-image: url("./assets/icons/plus-line.png");
+    background-position: left;
+    background-position-x: 10%;
 }
 
 button a {
@@ -78,18 +90,29 @@ button a {
 
 select,
 input {
-    font-size: var(--font-size3);
+    font-size: var(--font-size2);
     border-radius: 5px;
     border: 1px solid var(--darkblue);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 5px;
     padding-right: 15px;
     appearance: none;
-    background-image: url("./assets/icons/time.png");
     background-repeat: no-repeat;
+    background-size: 25px 25px;
     background-position: 95%;
     /*background-position-x: 100%;*/
+}
+
+input:not(#servings-field) {
+    background-image: url("./assets/icons/search.png");
+}
+
+
+
+select {
+    background-image: url("./assets/icons/chevron-down.png");
+    background-size: 15px 15px;
 }
 
 input::placeholder {
@@ -128,6 +151,10 @@ h6 {
     color: var(--darkblue);
 }
 
+h5 {
+    font-size: var(--font-size4);
+}
+
 
 /*----------------4. Layout --------------------------------------------------------------*/
 main,
@@ -148,7 +175,7 @@ footer,
     flex-direction: column;
     justify-content: space-around;
     gap: 40px;
-    padding: 100px 0;
+    padding: 100px 50px;
     margin-top: 50px;
 }
 
@@ -171,6 +198,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    /*flex-wrap: wrap;*/
 }
 
 header h1 {
@@ -178,13 +206,14 @@ header h1 {
     /*align-self: flex-start;*/
 }
 nav {
-    flex-basis: 400px;
+    flex-basis: 300px;
 }
 nav > ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /*----------------5.2. Main index --------------------------------------------------------*/
@@ -198,39 +227,107 @@ nav > ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: -100;
+    /*z-index: -100;*/
     /*aspect-ratio: 475/150;*/
 }
 
 .main-hero {
     flex-basis: 1400px;
-    padding: 100px 0;
-    margin-top: 50px;
+    padding: 100px 50px;
+    margin-top: 70px;
     margin-bottom: 70px;
     font-size: 24px;
-    z-index: -70;
+    /*z-index: -70;*/
+}
+
+.main-hero h1,
+.main-hero h5 {
+    color: var(--lightgrey);
+    margin-bottom: 20px;
+}
+
+.main-hero h5 {
+    font-weight: 100;
+}
+
+.main-hero button{
+    width: 200px;
 }
 
 .main-carousel {
     flex-basis: 1400px;
+    padding-top: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
-    position: relative;
-    top: -20px;
+    justify-content: center;
+    /*gap: 5px;*/
+    align-items: center;
+    /*position: relative;*/
+    /*top: -50px;*/
+    padding-inline: 50px;
+    flex-wrap: wrap;
+
 }
 
-.main-carousel-card {
+.main-carousel-card,
+.main-result-card {
+    /*flex-basis: 350px;*/
+    background-color: var(--lightgrey);
     z-index: 200;
     cursor: pointer;
+    flex-basis: 350px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: flex-end;*/
+    border-radius: 2%;
+    /*border-collapse: separate;*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+
 }
 
-.main-carousel:nth-child(2) {
-    padding: 10px 0;
-    z-index: 350;
-    box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.16);
+.main-carousel-card > img,
+.main-carousel-card h4,
+.main-result-card > img,
+.main-result-card > h4 {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
+
+.main-carousel-card h4,
+.main-result-card > h4 {
+    flex-basis: 35px;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.main-carousel-card > img,
+.main-result-card > img {
+    border-radius: 2% 2% 0 0;
+}
+
+.main-carousel-card > div,
+.main-result-card > div {
+    flex-basis: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.main-carousel-card > div p,
+.main-result-card > div p{
+    font-weight: 200;
+}
+
+#time-icon {
+    width: 15px;
+}
+
+
 
 #main-ribbon {
     background-color: var(--darkblue);
@@ -243,6 +340,8 @@ nav > ul {
     justify-content: space-between;
     flex-basis: 1400px;
     /*gap: 30px;*/
+    padding-inline: 50px;
+    flex-wrap: wrap;
 }
 
 #input-field {
@@ -260,9 +359,13 @@ nav > ul {
     flex-direction: row;
     flex-wrap: wrap;
     flex-basis: 1400px;
+    justify-content: space-between;
     gap: 20px; /*40px*/
     cursor: pointer;
+    padding: 50px 50px;
 }
+
+
 
 /*----------------5.3. Main recipe -------------------------------------------------------*/
 
@@ -277,23 +380,51 @@ nav > ul {
 #main-recipe-title h1 {
     margin-right: 20px;
 }
-
-article {
+#search-logo{
+    width: 100px;
+}
+#main-recipe article {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
+#main-recipe-ingredients {
+    list-style-position: inside;
+}
+
+#main-recipe-ingredients li {
+    margin-bottom: 5px;
+}
+
+#main-recipe-nutrients td{
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.main-recipe-nutrients-align-right{
+    text-align: right;
+}
+
+#main-recipe-health {
+    flex-basis: 700px;
+}
+
+
+
 #health-labels {
-    flex-basis: 400px;
     list-style-type: none;
 }
 
 #health-labels > li {
-    display: inline;
+    display: inline-block;
     background-color: var(--lightblue);
-    border-radius: 50%; /*50px*/
+    border-radius: 50px; /*50px*/
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    border: 1px solid var(--darkblue);
 }
 
 
@@ -301,24 +432,44 @@ article {
 
 #main-calculator {
     flex-basis: 1400px;
+    align-items: flex-start;
 }
 
 #input-field-calorie {
     width: 300px;
-    background: url("./assets/icons/time.png") no-repeat right;
-    background-size: 24px;
-    padding-right: 30px;
+    /*background: url("./assets/icons/time.png") no-repeat right;*/
+    /*background-size: 24px;*/
+    /*padding-right: 30px;*/
+    margin-right: 10px;
 }
 
-
+#servings-field,
 #servings-button {
-    padding-left: 30px;
-    background-image: url("./assets/icons/time.png");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 24px;
-    padding-right: 15px;
+    margin-left: 10px;
 }
+
+label{
+    margin-right: 10px;
+}
+
+#main-calorie-count th,
+#main-calorie-count td,
+#main-calorie-product th,
+#main-calorie-product td {
+    padding-right: 50px;
+}
+
+.main-calorie-count-line td{
+    border-top: 1px solid black;
+}
+/*#servings-button {*/
+/*    padding-left: 30px;*/
+/*    background-image: url("./assets/icons/time.png");*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: left;*/
+/*    background-size: 24px;*/
+/*    padding-right: 15px;*/
+/*}*/
 /*----------------5.5. Footer ------------------------------------------------------------*/
 
 footer {
@@ -332,21 +483,23 @@ footer > section {
     justify-content: center;
     align-items: flex-start;
     padding: 30px 0;
+    padding-inline: 50px;
+    flex-wrap: wrap;
 }
 
 footer > section > ul {
-    width: 250px;
+    flex-basis: 250px;
     list-style-type: none;
 }
 
 footer > section > ul > li a,
 footer > section > ul > li a:visited {
-    color: var(--lightgrey);
+    color: darkgray;
     font-size: var(--font-size1);
     font-weight: 200;
 }
 
-.footer-title > h4 {
+.footer-title > h3 {
     color: var(--lightblue);
     margin-bottom: 30px;
 }
@@ -402,7 +555,7 @@ footer > section > ul > li a:visited {
 .open-page{
     position: absolute;
     /*height: 7vh;*/
-    height: 50px;
+    height: 70px;
     /*min-height: 50px;*/
     /*max-height: 50px;*/
 }
@@ -410,6 +563,60 @@ footer > section > ul > li a:visited {
 /*----------------7. Media Queries -------------------------------------------------------*/
 
 
-h1 {
-    font-family: 'Poppins', cursive;
+@media screen and (min-width: 768px) {
+    .open-page{
+        height: 50px;
+    }
+
+    .main-hero {
+        margin-top: 50px;
+    }
+
+    nav > ul,
+    .main-carousel,
+    #main-recipe > article,
+    footer > section {
+        flex-wrap: nowrap;
+    }
+
 }
+
+@media screen and (min-width: 1200px) {
+    .main-hero,
+    .main-carousel,
+    .main-search-bar,
+    .main-result,
+    .inner-container,
+    footer > section {
+        padding-inline: unset;
+    }
+
+    .main-search-bar {
+        flex-wrap: nowrap;
+    }
+
+    .main-result-card {
+        flex-basis: 30%;
+    }
+
+    .main-carousel-card {
+        flex-basis: 33%;
+    }
+
+    .main-carousel {
+        transform: translateY(-20%);
+        /*gap: unset;*/
+    }
+
+    .main-carousel > article:nth-child(2) {
+        background-color: var(--lightgrey);
+        height: 120%;
+        z-index: 350;
+        box-shadow: 0 50px 200px rgba(0, 0, 0, 0.16);
+    }
+
+    .main-carousel article:nth-child(2) > img {
+        height: 100%;
+    }
+}
+

@@ -1,4 +1,4 @@
-
+import timeIcon from "../assets/icons/time.png";
 import {addLoader, removeLoader} from "./makeLoader.js";
 import secretKeys from "../../notes/appkey.js";
 import axios from "axios";
@@ -8,6 +8,9 @@ const cardCarousel = document.getElementById('main-carousel');
 const headerAnim = document.getElementById('header-anim');
 
 const {recKey, recID} = secretKeys;
+
+
+
 
 const searchObject = {
     queryVal: 'this',
@@ -51,25 +54,28 @@ const createCardHeader = (recipes) => {
     // cardTwo.replaceChildren();
     // cardThree.replaceChildren();
     cardCarousel.replaceChildren();
-
     recipes.map((entry, i) => {
         if(i < 3) {
             const id = entry.recipe.uri.split("_")[1];
-            const link = `recipe.html?id=${id}`
+            const link = `recipe.html?id=${id}`;
+
             cardCarousel.innerHTML += `
             
                 <article class="main-carousel-card" id="${link}">
                     <img src="${entry.recipe.image}" alt="${entry.recipe.label}"/>
-                    <h5>${entry.recipe.label}</h5>
+                    <h4>${entry.recipe.label}</h4>
                     <div>
                         <p><strong>${(Math.round((entry.recipe.calories) * 0.01) / 0.01)}</strong> calories | <strong>${entry.recipe.ingredients.length}</strong> ingredients</p>
-                        <p><strong>${entry.recipe.totalTime}</strong> min</p>
+                        <p><img src="${timeIcon}" alt="time icon" id="time-icon"><strong>    ${entry.recipe.totalTime}</strong> min</p>
                     </div>
                 </article>
             
-            `
+            `;
+
         }
+
     } )
+
 
     const newPages = document.querySelectorAll(".main-carousel-card");
     newPages.forEach((entry) => {
@@ -79,6 +85,11 @@ const createCardHeader = (recipes) => {
             setTimeout(() => {
                 window.location.replace(goTo);
             }, 2000)
+        }, true);
+        entry.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            const goTo = e.currentTarget.id;
+            window.open(goTo, "_blank");
         }, true);
 
     })

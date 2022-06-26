@@ -1,7 +1,8 @@
+import timeIcon from "../assets/icons/time.png";
 const recipeCards = document.getElementById("recipe-cards");
 const headerAnim = document.getElementById('header-anim');
 
-const createCard = (recipes) => {
+export const createCard = (recipes) => {
 
     recipeCards.replaceChildren();
 
@@ -13,10 +14,10 @@ const createCard = (recipes) => {
             
                 <article class="main-result-card" id="${link}">
                     <img src="${entry.recipe.image}" alt="${entry.recipe.label}"/>
-                    <h5>${entry.recipe.label}</h5>
+                    <h4>${entry.recipe.label}</h4>
                     <div>
                         <p><strong>${(Math.round((entry.recipe.calories) * 0.01) / 0.01)}</strong> calories | <strong>${entry.recipe.ingredients.length}</strong> ingredients</p>
-                        <p><strong>${entry.recipe.totalTime}</strong> min</p>
+                        <p><img src="${timeIcon}" alt="time icon" id="time-icon"><strong>    ${entry.recipe.totalTime}</strong> min</p>
                     </div>
                 </article>
             
@@ -32,8 +33,20 @@ const createCard = (recipes) => {
                 window.location.replace(goTo);
             }, 2000)
         }, true);
+        entry.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            const goTo = e.currentTarget.id;
+            window.open(goTo, "_blank");
+        }, true);
 
     })
 }
 
-export default createCard;
+
+export const createEmptyCard = () => {
+
+    recipeCards.replaceChildren();
+    recipeCards.innerHTML = `
+    <p>No results found. Please try again</p>
+    `;
+}

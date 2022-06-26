@@ -2,6 +2,13 @@ const showTable = document.getElementById('main-calorie-count');
 const showProduct = document.getElementById('main-calorie-product');
 
 export const createCalProduct = (label, quantity) => {
+    showProduct.innerHTML = `
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Label</th>
+        </tr>
+    `
     showProduct.innerHTML += `
         <tr>
             <td>${label}</td>
@@ -14,17 +21,17 @@ export const createCalProduct = (label, quantity) => {
 export const createCalList = (entries) => {
     showProduct.innerHTML = `
         <tr>
-            <th>product</th>
-            <th>quantity</th>
-            <th>label</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Label</th>
         </tr>
     `
     showTable.innerHTML = `
         <tr>
-            <th>product</th>
-            <th>calorie</th>
-            <th>fat</th>
-            <th>carbs</th>
+            <th>Product</th>
+            <th>Calorie</th>
+            <th>Fat</th>
+            <th>Carbs</th>
         </tr>
     `
 
@@ -39,19 +46,35 @@ export const createCalList = (entries) => {
         showTable.innerHTML += `
         <tr>
             <td>${entry.product}</td>
-            <td>${entry.calorie}</td>
-            <td>${entry.fat}</td>
-            <td>${entry.carb}</td>
+            <td>${entry.calorie} kcal</td>
+            <td>${entry.fat} g</td>
+            <td>${entry.carb} g</td>
         </tr>
     `
     });
 
     showTable.innerHTML += `
         <tr class="main-calorie-count-line">
-            <td>total</td>
-            <td>${totalCalories}</td>
-            <td>${totalFat}</td>
-            <td>${totalCarbs}</td>
+            <td>Total</td>
+            <td>${totalCalories} kcal</td>
+            <td>${totalFat} g</td>
+            <td>${totalCarbs} g</td>
+        </tr>
+    `
+}
+
+export const createCalError = () => {
+    showProduct.innerHTML = `
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Label</th>
+        </tr>
+    `
+    showProduct.innerHTML += `
+        <tr>
+            <td>No results found. Please try again.</td>
+           
         </tr>
     `
 }

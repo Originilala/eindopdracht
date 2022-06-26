@@ -1,5 +1,6 @@
 import fetchProduct from "./fetchProduct";
 import {calculateCalories} from "./addToCalculator";
+import createError from "./createError";
 
 const calSearchButton = document.getElementById("calorie-button");
 const calAddButton = document.getElementById("servings-button");
@@ -15,6 +16,6 @@ function handleClick () {
 }
 
 function handleClick2 () {
-    calculateCalories(calAddBar.value);
+    calculateCalories(calAddBar.value ? calAddBar.value : 1);
     calAddBar.value='';
 }
