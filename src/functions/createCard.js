@@ -47,6 +47,6 @@ export const createEmptyCard = () => {
 
     recipeCards.replaceChildren();
     recipeCards.innerHTML = `
-    <p>No results found. Please try again</p>
+    <p>No results found. Please try again.</p>
     `;
 }

@@ -25,7 +25,10 @@ const fetchData = async (param) => {
 
         const recipes = response.data.hits;
         console.log(recipes);
-        if(recipes.length === 0){
+        if (!recipes){
+            createEmptyCard();
+        }
+        else if(recipes.length === 0){
             createEmptyCard();
         }else{
             createCard(recipes);

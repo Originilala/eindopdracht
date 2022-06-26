@@ -382,6 +382,7 @@ nav > ul {
 }
 #search-logo{
     width: 100px;
+    padding: 15px;
 }
 #main-recipe article {
     display: flex;

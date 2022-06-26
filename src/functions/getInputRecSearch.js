@@ -1,4 +1,4 @@
-import fetchData from "./fetchData";
+import fetchData from "./fetchData.js";
 
 const recipeSearch = document.getElementById('input-field');
 const mealField = document.getElementById('meal-field');
