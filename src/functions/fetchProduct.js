@@ -11,7 +11,7 @@ const fetchProduct = async (searchQuery) => {
     const apiUrl = "https://www.edamam.com/api";
     const endpoint = "/food-database/v2/parser";
     addLoader();
-    try{
+    try {
         const response = await axios.get(`${apiUrl}${endpoint}`, {
             params: {
                 type: "public",
@@ -20,9 +20,8 @@ const fetchProduct = async (searchQuery) => {
                 ingr: searchQuery
             }
         })
-        // console.log(response.data.hints[0]);
         addToCalculator(response.data.hints[0]);
-    } catch(err) {
+    } catch (err) {
         fetchProduct2(searchQuery);
         const empty = err;
     } finally {
@@ -34,7 +33,7 @@ const fetchProduct2 = async (searchQuery) => {
     const apiUrl = "https://www.edamam.com/api";
     const endpoint = "/food-database/v2/parser";
     addLoader();
-    try{
+    try {
         const response = await axios.get(`${apiUrl}${endpoint}`, {
             params: {
                 type: "public",
@@ -43,13 +42,12 @@ const fetchProduct2 = async (searchQuery) => {
                 upc: searchQuery
             }
         })
-        console.log(response.data.hints[0]);
         addToCalculator(response.data.hints[0]);
-    } catch(err) {
-        if(err.code === 'ERR_BAD_REQUEST'){
+    } catch (err) {
+        if (err.code === 'ERR_BAD_REQUEST') {
             createCalError();
-        } else{
-        createError(err);
+        } else {
+            createError(err);
         }
     } finally {
         removeLoader();

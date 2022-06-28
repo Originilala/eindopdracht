@@ -5,7 +5,7 @@ import fetchDataHeader from "./functions/createCardHeader";
 
 
 const searchObject = {
-    queryVal: 'roti',
+    queryVal: 'basic roti',
     mealTypeVal: '',
     cuisineTypeVal: '',
     dietTypeVal: '',

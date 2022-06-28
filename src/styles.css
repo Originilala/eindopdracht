@@ -6,7 +6,6 @@
     url('./assets/fonts/Austein/Austein-Script.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 /*Table of contents
@@ -24,6 +23,7 @@
     7. Media Queries  */
 
 /*----------------1. Global Styles -------------------------------------------------------*/
+
 :root {
     --darkblue: #283E53; /*charcoal*/
     --lightblue: #5C8A95; /*steel teal*/
@@ -42,7 +42,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 /*----------------2. Reusables -----------------------------------------------------------*/
@@ -66,7 +65,6 @@ button {
     padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
-    /*margin: 0 25px;*/
     background-image: url("./assets/icons/thin-arrow-right.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
@@ -101,14 +99,11 @@ input {
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: 95%;
-    /*background-position-x: 100%;*/
 }
 
 input:not(#servings-field) {
     background-image: url("./assets/icons/search.png");
 }
-
-
 
 select {
     background-image: url("./assets/icons/chevron-down.png");
@@ -135,9 +130,7 @@ button:hover {
 h2 {
     font-family: "Austein", "Lucida Handwriting", cursive;
     text-transform: capitalize;
-    /*transform: scale(.5, 1);*/
     font-style: italic;
-    /*letter-spacing: -5px;*/
     color: var(--darkblue);
 }
 
@@ -161,7 +154,7 @@ main,
 header,
 footer,
 .outer-container {
-    width: 100%; /*flex-basis: 100%*/
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -170,7 +163,6 @@ footer,
 
 .inner-container {
     width: 100%;
-    /*flex-basis: 1400px; !*misschien naar 1200px zoals in het schermontwerp*!*/
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -178,7 +170,6 @@ footer,
     padding: 100px 50px;
     margin-top: 50px;
 }
-
 
 /*----------------5. Areas ---------------------------------------------------------------*/
 /*----------------5.1. Header ------------------------------------------------------------*/
@@ -198,16 +189,16 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /*flex-wrap: wrap;*/
 }
 
 header h1 {
     flex-basis: 200px;
-    /*align-self: flex-start;*/
 }
+
 nav {
     flex-basis: 300px;
 }
+
 nav > ul {
     list-style-type: none;
     display: flex;
@@ -227,8 +218,6 @@ nav > ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /*z-index: -100;*/
-    /*aspect-ratio: 475/150;*/
 }
 
 .main-hero {
@@ -237,7 +226,6 @@ nav > ul {
     margin-top: 70px;
     margin-bottom: 70px;
     font-size: 24px;
-    /*z-index: -70;*/
 }
 
 .main-hero h1,
@@ -250,7 +238,7 @@ nav > ul {
     font-weight: 100;
 }
 
-.main-hero button{
+.main-hero button {
     width: 200px;
 }
 
@@ -260,29 +248,19 @@ nav > ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*gap: 5px;*/
     align-items: center;
-    /*position: relative;*/
-    /*top: -50px;*/
     padding-inline: 50px;
     flex-wrap: wrap;
-
 }
 
 .main-carousel-card,
 .main-result-card {
-    /*flex-basis: 350px;*/
     background-color: var(--lightgrey);
     z-index: 200;
     cursor: pointer;
     flex-basis: 350px;
-    display: flex;
-    flex-direction: column;
-    /*justify-content: flex-end;*/
     border-radius: 2%;
-    /*border-collapse: separate;*/
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
-
 }
 
 .main-carousel-card > img,
@@ -297,7 +275,7 @@ nav > ul {
 
 .main-carousel-card h4,
 .main-result-card > h4 {
-    flex-basis: 35px;
+    height: 35px;
     padding: 0 10px;
     margin-top: 20px;
 }
@@ -309,8 +287,8 @@ nav > ul {
 
 .main-carousel-card > div,
 .main-result-card > div {
-    flex-basis: 35px;
     width: 100%;
+    height: 35px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -319,15 +297,13 @@ nav > ul {
 }
 
 .main-carousel-card > div p,
-.main-result-card > div p{
+.main-result-card > div p {
     font-weight: 200;
 }
 
 #time-icon {
     width: 15px;
 }
-
-
 
 #main-ribbon {
     background-color: var(--darkblue);
@@ -360,12 +336,10 @@ nav > ul {
     flex-wrap: wrap;
     flex-basis: 1400px;
     justify-content: space-between;
-    gap: 20px; /*40px*/
+    gap: 20px;
     cursor: pointer;
     padding: 50px 50px;
 }
-
-
 
 /*----------------5.3. Main recipe -------------------------------------------------------*/
 
@@ -380,10 +354,12 @@ nav > ul {
 #main-recipe-title h1 {
     margin-right: 20px;
 }
-#search-logo{
+
+#search-logo {
     width: 100px;
     padding: 15px;
 }
+
 #main-recipe article {
     display: flex;
     flex-direction: row;
@@ -400,20 +376,18 @@ nav > ul {
     margin-bottom: 5px;
 }
 
-#main-recipe-nutrients td{
+#main-recipe-nutrients td {
     padding-right: 5px;
     padding-bottom: 5px;
 }
 
-.main-recipe-nutrients-align-right{
+.main-recipe-nutrients-align-right {
     text-align: right;
 }
 
 #main-recipe-health {
     flex-basis: 700px;
 }
-
-
 
 #health-labels {
     list-style-type: none;
@@ -428,7 +402,6 @@ nav > ul {
     border: 1px solid var(--darkblue);
 }
 
-
 /*----------------5.4. Main calculator ---------------------------------------------------*/
 
 #main-calculator {
@@ -438,9 +411,6 @@ nav > ul {
 
 #input-field-calorie {
     width: 300px;
-    /*background: url("./assets/icons/time.png") no-repeat right;*/
-    /*background-size: 24px;*/
-    /*padding-right: 30px;*/
     margin-right: 10px;
 }
 
@@ -449,7 +419,7 @@ nav > ul {
     margin-left: 10px;
 }
 
-label{
+label {
     margin-right: 10px;
 }
 
@@ -460,17 +430,10 @@ label{
     padding-right: 50px;
 }
 
-.main-calorie-count-line td{
+.main-calorie-count-line td {
     border-top: 1px solid black;
 }
-/*#servings-button {*/
-/*    padding-left: 30px;*/
-/*    background-image: url("./assets/icons/time.png");*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: left;*/
-/*    background-size: 24px;*/
-/*    padding-right: 15px;*/
-/*}*/
+
 /*----------------5.5. Footer ------------------------------------------------------------*/
 
 footer {
@@ -515,7 +478,7 @@ footer > section > ul > li a:visited {
     padding: 5px;
 }
 
-.footer-icon img{
+.footer-icon img {
     vertical-align: -3px;
     width: 20px;
 }
@@ -545,27 +508,25 @@ footer > section > ul > li a:visited {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     animation: spin 2.5s linear 2s infinite;
-    background-color: rgba(0,0,0,0.0);
+    background-color: rgba(0, 0, 0, 0.0);
     height: 30px;
     width: 30px;
-    border: 5px solid rgba(92,138,149,0.5);
+    border: 5px solid rgba(92, 138, 149, 0.5);
     border-bottom: 5px solid var(--lightblue);
     border-radius: 50%;
 }
 
-.open-page{
+.open-page {
     position: absolute;
-    /*height: 7vh;*/
     height: 70px;
-    /*min-height: 50px;*/
-    /*max-height: 50px;*/
+
 }
 
 /*----------------7. Media Queries -------------------------------------------------------*/
 
 
 @media screen and (min-width: 768px) {
-    .open-page{
+    .open-page {
         height: 50px;
     }
 
@@ -579,7 +540,6 @@ footer > section > ul > li a:visited {
     footer > section {
         flex-wrap: nowrap;
     }
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -606,18 +566,18 @@ footer > section > ul > li a:visited {
 
     .main-carousel {
         transform: translateY(-20%);
-        /*gap: unset;*/
     }
 
-    .main-carousel > article:nth-child(2) {
+    .main-carousel article:nth-child(2) {
         background-color: var(--lightgrey);
-        height: 120%;
+        height: 105%;
         z-index: 350;
-        box-shadow: 0 50px 200px rgba(0, 0, 0, 0.16);
+        box-shadow: 0 10px 200px rgba(0, 0, 0, 0.46);
     }
 
     .main-carousel article:nth-child(2) > img {
-        height: 100%;
+        object-fit: cover;
+        height: calc(100% - 110px);
     }
 }
 

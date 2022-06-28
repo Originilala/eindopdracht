@@ -1,4 +1,5 @@
 import timeIcon from "../assets/icons/time.png";
+
 const recipeCards = document.getElementById("recipe-cards");
 const headerAnim = document.getElementById('header-anim');
 
@@ -44,9 +45,11 @@ export const createCard = (recipes) => {
 
 
 export const createEmptyCard = () => {
-
     recipeCards.replaceChildren();
+
     recipeCards.innerHTML = `
-    <p>No results found. Please try again.</p>
-    `;
+        
+        <p>No results found. Please try again, with a different search term.</p>
+    `
+    ;
 }

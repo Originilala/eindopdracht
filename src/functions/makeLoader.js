@@ -1,5 +1,3 @@
-
-
 const spinner = document.getElementById("spinner");
 
 export const addLoader = () => {

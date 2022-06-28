@@ -6,19 +6,7 @@ import createError from "./createError.js";
 
 const cardCarousel = document.getElementById('main-carousel');
 const headerAnim = document.getElementById('header-anim');
-
 const {recKey, recID} = secretKeys;
-
-
-
-
-const searchObject = {
-    queryVal: 'this',
-    mealTypeVal: 'this',
-    cuisineTypeVal: 'this',
-    dietTypeVal: 'this',
-    timeVal: 'this'
-}
 
 const fetchDataHeader = async (param) => {
     const apiUrl = "https://api.edamam.com/api";
@@ -39,7 +27,6 @@ const fetchDataHeader = async (param) => {
         })
 
         const recipes = response.data.hits;
-        console.log(recipes);
         createCardHeader(recipes);
 
     } catch (err) {
@@ -50,12 +37,9 @@ const fetchDataHeader = async (param) => {
 }
 
 const createCardHeader = (recipes) => {
-    // cardOne.replaceChildren();
-    // cardTwo.replaceChildren();
-    // cardThree.replaceChildren();
     cardCarousel.replaceChildren();
     recipes.map((entry, i) => {
-        if(i < 3) {
+        if (i < 3) {
             const id = entry.recipe.uri.split("_")[1];
             const link = `recipe.html?id=${id}`;
 
@@ -74,7 +58,7 @@ const createCardHeader = (recipes) => {
 
         }
 
-    } )
+    })
 
 
     const newPages = document.querySelectorAll(".main-carousel-card");

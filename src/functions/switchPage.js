@@ -10,7 +10,6 @@ export const setListeners = () => {
     function navigateToNextPage(e) {
         if (e.target.getAttribute('href') && e.target.tagName === "A") {
             e.preventDefault();
-            // console.log(e);
             headerAnim.removeAttribute('class');
             setTimeout(() => {
                 window.location.replace(`${e.target.getAttribute('href')}`)

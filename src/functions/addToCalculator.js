@@ -15,8 +15,6 @@ export const addToCalculator = (product) => {
 }
 
 export const calculateCalories = (servings) => {
-    // console.log(prodArr);
-    // console.log(servings);
     const newArr = prodArr.map((element) => {
         totalServing.push({
             product: element.product,
@@ -26,7 +24,5 @@ export const calculateCalories = (servings) => {
         });
     })
     prodArr = [];
-    // totalServing += newArr;
-    // console.log(totalServing);
     createCalList(totalServing);
 }

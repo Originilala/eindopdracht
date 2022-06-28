@@ -1,4 +1,3 @@
-
 const createError = (error) => {
     alert(error.message);
 }

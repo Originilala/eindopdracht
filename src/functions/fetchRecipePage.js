@@ -10,7 +10,7 @@ const fetchRecipePage = async (id) => {
     const apiUrl = "https://www.edamam.com/api";
     const endpoint = "/recipes/v2/";
     addLoader();
-    try{
+    try {
         const response = await axios.get(`${apiUrl}${endpoint}${id}`, {
             params: {
                 app_id: recID,
@@ -18,9 +18,8 @@ const fetchRecipePage = async (id) => {
                 type: "public"
             }
         })
-        console.log(response.data);
         createRecipePage(response.data);
-    } catch(err) {
+    } catch (err) {
         createError(err);
     } finally {
         removeLoader();
