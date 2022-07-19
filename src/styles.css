@@ -175,11 +175,11 @@ footer,
 /*----------------5.1. Header ------------------------------------------------------------*/
 
 header {
-    background-color: var(--lightgrey);
+    background-color: white;
     position: fixed;
     height: 100%;
     z-index: 800;
-    transition: all 2s ease-in-out;
+    transition: all 2s steps(15, jump-both);
 }
 
 .header-nav {
@@ -242,6 +242,7 @@ nav > ul {
     width: 200px;
 }
 
+.main-result,
 .main-carousel {
     flex-basis: 1400px;
     display: flex;
@@ -330,13 +331,7 @@ nav > ul {
 }
 
 .main-result {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 1400px;
-    justify-content: space-between;
     gap: 20px;
-    cursor: pointer;
     padding: 50px 50px;
 }
 
@@ -518,6 +513,7 @@ footer > section > ul > li a:visited {
 .open-page {
     position: absolute;
     height: 70px;
+    background-color: var(--lightgrey);
 
 }
 
