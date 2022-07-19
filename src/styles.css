@@ -244,7 +244,6 @@ nav > ul {
 
 .main-carousel {
     flex-basis: 1400px;
-    padding-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -277,23 +276,23 @@ nav > ul {
 .main-result-card > h4 {
     height: 35px;
     padding: 0 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .main-carousel-card > img,
 .main-result-card > img {
     border-radius: 2% 2% 0 0;
+    object-fit: cover;
+    height: 200px;
 }
 
 .main-carousel-card > div,
 .main-result-card > div {
     width: 100%;
-    height: 35px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10px;
-    margin-top: 20px;
 }
 
 .main-carousel-card > div p,
@@ -566,18 +565,18 @@ footer > section > ul > li a:visited {
 
     .main-carousel {
         transform: translateY(-20%);
+        margin: -50px 0;
     }
 
     .main-carousel article:nth-child(2) {
-        background-color: var(--lightgrey);
-        height: 105%;
+        height: 315px;
         z-index: 350;
         box-shadow: 0 10px 200px rgba(0, 0, 0, 0.46);
     }
 
     .main-carousel article:nth-child(2) > img {
         object-fit: cover;
-        height: calc(100% - 110px);
+        height: 225px;
     }
 }
 
