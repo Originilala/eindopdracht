@@ -63,7 +63,7 @@ export const createCalList = (entries) => {
     `
 }
 
-export const createCalError = () => {
+export const createCalError = (error) => {
     showProduct.innerHTML = `
         <tr>
             <th>Product</th>
@@ -73,7 +73,7 @@ export const createCalError = () => {
     `
     showProduct.innerHTML += `
         <tr>
-            <td>No results found. Please try again.</td>
+            <td class="error">${error}</td>
            
         </tr>
     `

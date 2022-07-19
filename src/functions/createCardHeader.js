@@ -3,6 +3,7 @@ import {addLoader, removeLoader} from "./makeLoader.js";
 import secretKeys from "../../notes/appkey.js";
 import axios from "axios";
 import createError from "./createError.js";
+import {createEmptyCard} from "./createCard";
 
 const cardCarousel = document.getElementById('main-carousel');
 const headerAnim = document.getElementById('header-anim');
@@ -28,9 +29,8 @@ const fetchDataHeader = async (param) => {
 
         const recipes = response.data.hits;
         createCardHeader(recipes);
-
     } catch (err) {
-        createError(err);
+        createEmptyCard(createError(err));
     } finally {
         removeLoader();
     }

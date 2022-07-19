@@ -2,6 +2,7 @@ import axios from "axios";
 import secretKeys from "../../notes/appkey.js";
 import {addLoader, removeLoader} from "./makeLoader.js";
 import {createCard, createEmptyCard} from "./createCard.js";
+import createError from "./createError.js";
 
 const {recKey, recID} = secretKeys;
 
@@ -25,15 +26,17 @@ const fetchData = async (param) => {
 
         const recipes = response.data.hits;
         if (!recipes) {
-            createEmptyCard();
+            recipes.code = "NO_RESULT";
+            createEmptyCard(createError(recipes));
         } else if (recipes.length === 0) {
-            createEmptyCard();
+            recipes.code = "NO_RESULT";
+            createEmptyCard(createError(recipes));
         } else {
             createCard(recipes);
         }
 
     } catch (err) {
-        createError(err);
+        createEmptyCard(createError(err));
     } finally {
         removeLoader();
     }

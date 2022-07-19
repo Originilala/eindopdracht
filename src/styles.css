@@ -125,6 +125,9 @@ button:hover {
     justify-content: space-between;
 }
 
+.error {
+    color: red;
+}
 /*----------------3. Typography ----------------------------------------------------------*/
 
 h2 {
@@ -179,7 +182,7 @@ header {
     position: fixed;
     height: 100%;
     z-index: 800;
-    transition: all 2s steps(15, jump-both);
+    transition: height 2s steps(3, jump-both);
 }
 
 .header-nav {
@@ -260,7 +263,7 @@ nav > ul {
     cursor: pointer;
     flex-basis: 350px;
     border-radius: 2%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);;
 }
 
 .main-carousel-card > img,
@@ -284,6 +287,7 @@ nav > ul {
 .main-result-card > img {
     border-radius: 2% 2% 0 0;
     object-fit: cover;
+    position: center;
     height: 200px;
 }
 
@@ -508,6 +512,7 @@ footer > section > ul > li a:visited {
     border: 5px solid rgba(92, 138, 149, 0.5);
     border-bottom: 5px solid var(--lightblue);
     border-radius: 50%;
+    z-index: 900;
 }
 
 .open-page {
@@ -549,6 +554,10 @@ footer > section > ul > li a:visited {
 
     .main-search-bar {
         flex-wrap: nowrap;
+    }
+
+    .main-result {
+        justify-content: space-between;
     }
 
     .main-result-card {

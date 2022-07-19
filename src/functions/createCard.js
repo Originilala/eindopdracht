@@ -44,12 +44,12 @@ export const createCard = (recipes) => {
 }
 
 
-export const createEmptyCard = () => {
+export const createEmptyCard = (error) => {
     recipeCards.replaceChildren();
 
     recipeCards.innerHTML = `
         
-        <p>No results found. Please try again, with a different search term.</p>
+        <p class="error">${error}</p>
     `
     ;
 }

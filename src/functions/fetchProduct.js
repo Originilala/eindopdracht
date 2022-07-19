@@ -44,11 +44,7 @@ const fetchProduct2 = async (searchQuery) => {
         })
         addToCalculator(response.data.hints[0]);
     } catch (err) {
-        if (err.code === 'ERR_BAD_REQUEST') {
-            createCalError();
-        } else {
-            createError(err);
-        }
+        createCalError(createError(err));
     } finally {
         removeLoader();
     }
