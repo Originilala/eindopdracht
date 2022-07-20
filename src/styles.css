@@ -181,8 +181,8 @@ header {
     background-color: white;
     position: fixed;
     height: 100%;
-    z-index: 800;
-    transition: height 2s steps(3, jump-both);
+    z-index: 1000;
+    transition: height 2s ease-in-out, background-color 2s ease-in-out;
 }
 
 .header-nav {
@@ -192,6 +192,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transform: scaleY(1%);
+    transition: all 2s steps(3, jump-both);
 }
 
 header h1 {
@@ -254,6 +256,11 @@ nav > ul {
     align-items: center;
     padding-inline: 50px;
     flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-result {
+    padding: 50px 50px;
 }
 
 .main-carousel-card,
@@ -278,9 +285,10 @@ nav > ul {
 
 .main-carousel-card h4,
 .main-result-card > h4 {
-    height: 35px;
+    height: 25px;
     padding: 0 10px;
     margin-top: 10px;
+    overflow: hidden;
 }
 
 .main-carousel-card > img,
@@ -334,11 +342,6 @@ nav > ul {
     flex-basis: 200px;
 }
 
-.main-result {
-    gap: 20px;
-    padding: 50px 50px;
-}
-
 /*----------------5.3. Main recipe -------------------------------------------------------*/
 
 #main-recipe {
@@ -351,6 +354,10 @@ nav > ul {
 
 #main-recipe-title h1 {
     margin-right: 20px;
+}
+
+.icon-recipe{
+    width: 15px;
 }
 
 #search-logo {
@@ -430,6 +437,12 @@ label {
 
 .main-calorie-count-line td {
     border-top: 1px solid black;
+}
+
+#main-calorie-count td:nth-child(2),
+#main-calorie-count td:nth-child(3),
+#main-calorie-count td:nth-child(4) {
+    text-align: right;
 }
 
 /*----------------5.5. Footer ------------------------------------------------------------*/
@@ -522,6 +535,10 @@ footer > section > ul > li a:visited {
 
 }
 
+.open-nav {
+    transform: scaleY(100%);
+}
+
 /*----------------7. Media Queries -------------------------------------------------------*/
 
 
@@ -535,7 +552,6 @@ footer > section > ul > li a:visited {
     }
 
     nav > ul,
-    .main-carousel,
     #main-recipe > article,
     footer > section {
         flex-wrap: nowrap;
@@ -550,6 +566,11 @@ footer > section > ul > li a:visited {
     .inner-container,
     footer > section {
         padding-inline: unset;
+    }
+
+    .main-carousel {
+        flex-wrap: nowrap;
+        gap: 0px;
     }
 
     .main-search-bar {

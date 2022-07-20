@@ -1,6 +1,7 @@
 const headerAnim = document.getElementById('header-anim');
 const mainAnim = document.getElementById('main-anim');
 const footerAnim = document.getElementById('footer-anim');
+const navAnim = document.getElementById('nav-anim');
 
 export const setListeners = () => {
     headerAnim.addEventListener("click", navigateToNextPage, true);
@@ -11,6 +12,7 @@ export const setListeners = () => {
         if (e.target.getAttribute('href') && e.target.tagName === "A") {
             e.preventDefault();
             headerAnim.removeAttribute('class');
+            navAnim.classList.remove('open-nav');
             setTimeout(() => {
                 window.location.replace(`${e.target.getAttribute('href')}`)
             }, 2000)
