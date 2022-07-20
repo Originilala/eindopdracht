@@ -8,7 +8,7 @@
 * [Link]((#link))
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Setup](##setup)
 * [Status](#status)
 * [Features](#features)
 * [Future updates](#future-updates)
@@ -26,16 +26,23 @@ The instructions for making the recipe aren't in the website.
 But there are links to the directions on other sites.
 
 ##Link
+
 You can find the
 [Github repo of the app here.](https://github.com/Originilala/eindopdracht)
+
 ##Screenshots
+
 ![Home Page](./src/assets/images/SchermafbeeldingTCC1.jpg)
 ![Home Page2](./src/assets/images/SchermafbeeldingTCC2.jpg)
+
 ##Technologies
+
 * parcel: version 2.6.1
 * npm: version 8.12.2
 * axios: verion 0.27.2
+
 ##Setup
+
 _Here is a step-by-step plan for creating the application._
 
 1. Clone the app and download to your pc.
@@ -62,6 +69,7 @@ This app is finished, but may be enhanced with more features in the near future.
 - Calories can be calculated per portion.
 
 ##Future updates
+
 _Finally, suggestions for its evolution._
 
 - [x] Add about page
@@ -71,6 +79,7 @@ _Finally, suggestions for its evolution._
 - [ ] Add camera bar code scanner for a simple calorie count 
 
 ##Code Example
+
 ```
 headerAnim.addEventListener("click", navigateToNextPage, true);
 function navigateToNextPage(e) {
@@ -83,12 +92,18 @@ function navigateToNextPage(e) {
     }
 }
 ```
+
 ##Sources
+
 * API is provided by Edamam.com
 * Screen designs are provided by Novi.nl
+
 ##Inspiration
+
 * 24kitchen.nl
+
 ##Author
+
 **Originilala**
 
 [Repos](https://github.com/Originilala)
