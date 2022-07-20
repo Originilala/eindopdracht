@@ -36,7 +36,7 @@ searchButton.addEventListener("click", function startApp() {
 
 //Do the same when enter is pressed
 recipeSearch.addEventListener("keydown", (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === 'Enter') {
         //Get all the input values on a mouse click.
         const searchQuery = {
             queryVal: recipeSearch.value,

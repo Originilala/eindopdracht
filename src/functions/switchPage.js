@@ -1,18 +1,25 @@
+//Get elements on the page, so we can intercept clicks
 const headerAnim = document.getElementById('header-anim');
 const mainAnim = document.getElementById('main-anim');
 const footerAnim = document.getElementById('footer-anim');
 const navAnim = document.getElementById('nav-anim');
 
+//Set listeners on the elements
 export const setListeners = () => {
+    //Option true so it will override other events
     headerAnim.addEventListener("click", navigateToNextPage, true);
     mainAnim.addEventListener("click", navigateToNextPage, true);
     footerAnim.addEventListener("click", navigateToNextPage, true);
 
+    //Then we find out if a link was clicked
     function navigateToNextPage(e) {
         if (e.target.getAttribute('href') && e.target.tagName === "A") {
+            //Don't follow the link
             e.preventDefault();
+            //Start the animation by closing the page by removing classes.
             headerAnim.removeAttribute('class');
             navAnim.classList.remove('open-nav');
+            //Wait two seconds, because the animation takes two seconds, the go to the link.
             setTimeout(() => {
                 window.location.replace(`${e.target.getAttribute('href')}`)
             }, 2000)

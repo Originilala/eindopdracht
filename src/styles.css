@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap'); /*import Poppins font*/
 
+/*import Austein font*/
 @font-face {
     font-family: 'Austein';
     src: url('./assets/fonts/Austein/Austein.woff2') format('woff2'),
@@ -28,9 +29,9 @@
     --darkblue: #283E53; /*charcoal*/
     --lightblue: #5C8A95; /*steel teal*/
     --lightgrey: #F3F3F3; /*cultured*/
-    --font-size1: 10px;
+    --font-size1: 10px;/*different sizes for the site*/
     --font-size2: 14px;
-    --font-size3: 20px;
+    --font-size3: 24px;
     --font-size4: 30px;
 }
 
@@ -38,6 +39,7 @@ body {
     font-family: Poppins, "Roboto Light", sans-serif;
 }
 
+/*reset*/
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +48,7 @@ body {
 
 /*----------------2. Reusables -----------------------------------------------------------*/
 
+/*all links stay the same color*/
 a,
 a:visited,
 a:link {
@@ -54,6 +57,7 @@ a:link {
     text-transform: capitalize;
 }
 
+/*style button here*/
 button {
     font-size: var(--font-size2);
     text-transform: capitalize;
@@ -74,6 +78,7 @@ button {
     cursor: pointer;
 }
 
+/*the only button with icon on the left*/
 #servings-button {
     padding-left: 40px;
     padding-right: 15px;
@@ -86,6 +91,7 @@ button a {
     color: var(--darkblue);
 }
 
+/*style all inputs here*/
 select,
 input {
     font-size: var(--font-size2);
@@ -94,7 +100,7 @@ input {
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 5px;
-    padding-right: 15px;
+    padding-right: 45px;
     appearance: none;
     background-repeat: no-repeat;
     background-size: 25px 25px;
@@ -105,11 +111,13 @@ input:not(#servings-field) {
     background-image: url("./assets/icons/search.png");
 }
 
+/*add own icon to place it more off the border to make it more like screen design*/
 select {
     background-image: url("./assets/icons/chevron-down.png");
     background-size: 15px 15px;
 }
 
+/*more off the border*/
 input::placeholder {
     padding-left: 5px;
 }
@@ -119,17 +127,12 @@ button:hover {
     cursor: pointer;
 }
 
-.main-card-subtitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .error {
     color: red;
 }
 /*----------------3. Typography ----------------------------------------------------------*/
 
+/*the logo is always an h2 and the only h2 one on the page*/
 h2 {
     font-family: "Austein", "Lucida Handwriting", cursive;
     text-transform: capitalize;
@@ -147,12 +150,16 @@ h6 {
     color: var(--darkblue);
 }
 
+/*used in hero section*/
 h5 {
     font-size: var(--font-size4);
+    font-weight: 100;
 }
 
 
 /*----------------4. Layout --------------------------------------------------------------*/
+
+/*all outer containers are flex with direction row*/
 main,
 header,
 footer,
@@ -163,7 +170,7 @@ footer,
     justify-content: center;
 }
 
-
+/*if flex direction column is needed use this class*/
 .inner-container {
     width: 100%;
     display: flex;
@@ -177,14 +184,16 @@ footer,
 /*----------------5. Areas ---------------------------------------------------------------*/
 /*----------------5.1. Header ------------------------------------------------------------*/
 
+/*start with complete fill of the screen, with an other class the header turns into a normal header as a page transition animation*/
 header {
     background-color: white;
     position: fixed;
     height: 100%;
     z-index: 1000;
-    transition: height 2s ease-in-out, background-color 2s ease-in-out;
+    transition: height 2s ease-in-out;
 }
 
+/*the nav bar has a steps animation to make the page transition animation more fluid*/
 .header-nav {
     flex-basis: 1400px;
     padding: 15px 0;
@@ -214,6 +223,7 @@ nav > ul {
 
 /*----------------5.2. Main index --------------------------------------------------------*/
 
+/*inner container has padding, but that is not needed here*/
 #main-homepage {
     padding: 0;
 }
@@ -230,7 +240,7 @@ nav > ul {
     padding: 100px 50px;
     margin-top: 70px;
     margin-bottom: 70px;
-    font-size: 24px;
+    font-size: var(--font-size3);
 }
 
 .main-hero h1,
@@ -239,14 +249,11 @@ nav > ul {
     margin-bottom: 20px;
 }
 
-.main-hero h5 {
-    font-weight: 100;
-}
-
 .main-hero button {
     width: 200px;
 }
 
+/*this is the styling for mobile*/
 .main-result,
 .main-carousel {
     flex-basis: 1400px;
@@ -263,13 +270,14 @@ nav > ul {
     padding: 50px 50px;
 }
 
+/*this is the styling for mobile*/
 .main-carousel-card,
 .main-result-card {
     background-color: var(--lightgrey);
-    z-index: 200;
+    z-index: 200; /*high z-index so it can move over hero image*/
     cursor: pointer;
     flex-basis: 350px;
-    border-radius: 2%;
+    border-radius: 1%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);;
 }
 
@@ -277,7 +285,7 @@ nav > ul {
 .main-carousel-card h4,
 .main-result-card > img,
 .main-result-card > h4 {
-    display: block;
+    display: block; /*this is so every element will go under the next in the card*/
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -288,17 +296,18 @@ nav > ul {
     height: 25px;
     padding: 0 10px;
     margin-top: 10px;
-    overflow: hidden;
+    overflow: hidden; /*second and third line of text will not be shown*/
 }
 
 .main-carousel-card > img,
 .main-result-card > img {
-    border-radius: 2% 2% 0 0;
+    border-radius: 1% 1% 0 0;
     object-fit: cover;
-    position: center;
+    position: center; /*this makes the pictures look slightly better*/
     height: 200px;
 }
 
+/*calories and prep time need space between, so we placed a div around the two paragraphs*/
 .main-carousel-card > div,
 .main-result-card > div {
     width: 100%;
@@ -322,19 +331,19 @@ nav > ul {
     padding: 50px 0;
 }
 
+/*this is responsive with flex wrap*/
 .main-search-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-basis: 1400px;
-    /*gap: 30px;*/
     padding-inline: 50px;
     flex-wrap: wrap;
 }
 
+/*the input field is already styled in the reusables section. we only need to set the flex-basis*/
 #input-field {
     flex-basis: 250px;
-    background-image: url("./assets/icons/time.png");
 }
 
 .main-search-bar > select,
@@ -348,6 +357,7 @@ nav > ul {
     flex-basis: 1400px;
 }
 
+/*everything in the title on one line*/
 #main-recipe-title > * {
     display: inline-block;
 }
@@ -360,11 +370,13 @@ nav > ul {
     width: 15px;
 }
 
+/*only for the about page*/
 #search-logo {
     width: 100px;
     padding: 15px;
 }
 
+/*the picture and button need space between so we put them together in an article*/
 #main-recipe article {
     display: flex;
     flex-direction: row;
@@ -373,6 +385,7 @@ nav > ul {
     flex-wrap: wrap;
 }
 
+/*keep the bullets inside the unordered list */
 #main-recipe-ingredients {
     list-style-position: inside;
 }
@@ -381,6 +394,7 @@ nav > ul {
     margin-bottom: 5px;
 }
 
+/*a table is used for the nutrients*/
 #main-recipe-nutrients td {
     padding-right: 5px;
     padding-bottom: 5px;
@@ -390,6 +404,7 @@ nav > ul {
     text-align: right;
 }
 
+/*make it look more like the screen design*/
 #main-recipe-health {
     flex-basis: 700px;
 }
@@ -398,10 +413,11 @@ nav > ul {
     list-style-type: none;
 }
 
+/*style the health labels into labels*/
 #health-labels > li {
     display: inline-block;
     background-color: var(--lightblue);
-    border-radius: 50px; /*50px*/
+    border-radius: 50px;
     padding: 3px 10px;
     margin-bottom: 5px;
     border: 1px solid var(--darkblue);
@@ -428,6 +444,7 @@ label {
     margin-right: 10px;
 }
 
+/*we use tables to show the results*/
 #main-calorie-count th,
 #main-calorie-count td,
 #main-calorie-product th,
@@ -435,10 +452,12 @@ label {
     padding-right: 50px;
 }
 
+/*make a line above the total row*/
 .main-calorie-count-line td {
     border-top: 1px solid black;
 }
 
+/*in the second, third an last column the text is aligned right*/
 #main-calorie-count td:nth-child(2),
 #main-calorie-count td:nth-child(3),
 #main-calorie-count td:nth-child(4) {
@@ -451,6 +470,7 @@ footer {
     background-color: var(--darkblue);
 }
 
+/*make the footer responsive*/
 footer > section {
     flex-basis: 1400px;
     display: flex;
@@ -462,11 +482,13 @@ footer > section {
     flex-wrap: wrap;
 }
 
+/*for the footer we use an unordered list*/
 footer > section > ul {
     flex-basis: 250px;
     list-style-type: none;
 }
 
+/*all the links have to stay the same color*/
 footer > section > ul > li a,
 footer > section > ul > li a:visited {
     color: darkgray;
@@ -476,19 +498,21 @@ footer > section > ul > li a:visited {
 
 .footer-title > h3 {
     color: var(--lightblue);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
+/*make a circle for the social buttons*/
 .footer-icon {
     display: inline-block;
     background-color: var(--lightblue);
-    border-radius: 50px; /*50px*/
+    border-radius: 50px;
     margin-right: 10px;
     width: 30px;
     height: 30px;
     padding: 5px;
 }
 
+/*place the icons exactly in the middle of the circle*/
 .footer-icon img {
     vertical-align: -3px;
     width: 20px;
@@ -496,6 +520,7 @@ footer > section > ul > li a:visited {
 
 /*----------------6. Animations ----------------------------------------------------------*/
 
+/*spin animation for the loader*/
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -505,20 +530,23 @@ footer > section > ul > li a:visited {
     }
 }
 
+/*the loader should only show and start spinning after 2 seconds*/
 .spin {
     position: static;
-    background-color: yellow;
-    height: 0;
-    width: 0;
-    z-index: 700;
+    height: 0px;
+    width: 0px;
+    z-index: -1;
+    transition-delay: 2s;
+    transition-property: height, width;
 }
 
+/*the loader should only show and start spinning after 2 seconds*/
 .loading {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: spin 2.5s linear 2s infinite;
+    animation: spin 2.5s linear 0s infinite;
     background-color: rgba(0, 0, 0, 0.0);
     height: 30px;
     width: 30px;
@@ -528,13 +556,15 @@ footer > section > ul > li a:visited {
     z-index: 900;
 }
 
+/*this is the styling for mobile. On mobile the logo may wrap, so we make the height bigger.
+this class will be added to header for the page tranitio animation.*/
 .open-page {
     position: absolute;
     height: 70px;
     background-color: var(--lightgrey);
-
 }
 
+/*this is for open page animation. this class will be added to nav bar*/
 .open-nav {
     transform: scaleY(100%);
 }
@@ -543,6 +573,7 @@ footer > section > ul > li a:visited {
 
 
 @media screen and (min-width: 768px) {
+    /*make the nav bar a little smaller on big screen*/
     .open-page {
         height: 50px;
     }
@@ -559,14 +590,6 @@ footer > section > ul > li a:visited {
 }
 
 @media screen and (min-width: 1200px) {
-    .main-hero,
-    .main-carousel,
-    .main-search-bar,
-    .main-result,
-    .inner-container,
-    footer > section {
-        padding-inline: unset;
-    }
 
     .main-carousel {
         flex-wrap: nowrap;
@@ -589,17 +612,20 @@ footer > section > ul > li a:visited {
         flex-basis: 33%;
     }
 
+    /*move the carousel over the hero image and make the container smaller*/
     .main-carousel {
         transform: translateY(-20%);
         margin: -50px 0;
     }
 
+    /*the middle card has to pop out, so we make the height bigger with more shadow and z-index*/
     .main-carousel article:nth-child(2) {
         height: 315px;
         z-index: 350;
         box-shadow: 0 10px 200px rgba(0, 0, 0, 0.46);
     }
 
+    /*the image also has to increase, otherwise the text in the card will have to much white space*/
     .main-carousel article:nth-child(2) > img {
         object-fit: cover;
         height: 225px;
