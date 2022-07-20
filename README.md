@@ -43,10 +43,11 @@ _Here is a step-by-step plan for creating the application._
 
 > npm install
 
-3.Then a folder called 'notes' must be created in the main folder. A javascript file can be created here called appkey.js.
-4. In this file, 1 object must be exported. This object is called secretKeys and has 6 key-value pairs.
-5. The keys are nutKey, nutID, fooKey, fooID, recKey and recID with the corresponding API key values that you can request at Edamam.com by signing up.
-6. Now you can run the app.
+3. Then please go to the Edemam.com site and make an account.
+4. If you make an account you will get API keys and ID's.
+5. Fill in your keys and ID for the recipe API in the file fetchRecipePage.js, fetchData.js and createCardHeader.js in the variables recKey and recID.
+6. Fill in your keys and ID for the food API in the file fetchProduct.js in the variables fooKey, fooID.
+7. Now you can run the app.
 
 > npm run start 
 

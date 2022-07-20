@@ -2,7 +2,6 @@
 import timeIcon from "../assets/icons/time.png";
 //Import the functions for the loader animation.
 import {addLoader, removeLoader} from "./makeLoader.js";
-import secretKeys from "../../notes/appkey.js";
 //The recipe data is called with axios.
 import axios from "axios";
 //Import the helper function, so an errormessage will be chosen.
@@ -14,9 +13,11 @@ import {createEmptyCard} from "./createCard";
 const cardCarousel = document.getElementById('main-carousel');
 const headerAnim = document.getElementById('header-anim');
 const navAnim = document.getElementById('nav-anim');
+
 //Fill in your recipe API key here
+const recKey = "";
 //Fill in your recipe API ID here
-const {recKey, recID} = secretKeys;
+const recID = "";
 
 //This function takes an object with the search query and options and fetches the data
 const fetchDataHeader = async (param) => {

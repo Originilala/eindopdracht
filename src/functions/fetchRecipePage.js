@@ -2,15 +2,15 @@
 import axios from "axios";
 //Import the helper function, so an errormessage will be chosen.
 import createError from "./createError.js";
-import secretKeys from "../../notes/appkey.js";
 //Import the functions for the loader animation.
 import {addLoader, removeLoader} from "./makeLoader.js";
 //Import function, so the result or error will be injected on the page.
 import {createRecipePage, createRecipePage2} from "./createRecipePage.js";
 
 //Fill in your recipe API key here
+const recKey = "";
 //Fill in your recipe API ID here
-const {recID, recKey} = secretKeys;
+const recID = "";
 
 //This function takes a string with the id for the search query and fetches the data
 const fetchRecipePage = async (id) => {

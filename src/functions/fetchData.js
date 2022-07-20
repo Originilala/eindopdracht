@@ -1,6 +1,5 @@
 //The recipe data is called with axios.
 import axios from "axios";
-import secretKeys from "../../notes/appkey.js";
 //Import the functions for the loader animation.
 import {addLoader, removeLoader} from "./makeLoader.js";
 //Import function, so the result or the error message will be injected on the page.
@@ -8,9 +7,10 @@ import {createCard, createEmptyCard} from "./createCard.js";
 //Import the helper function, so an errormessage will be chosen.
 import createError from "./createError.js";
 
-//Fill in your recipe API key here
-//Fill in your recipe API ID here
-const {recKey, recID} = secretKeys;
+// //Fill in your recipe API key here
+const recKey = "";
+// //Fill in your recipe API ID here
+const recID = "";
 
 //This function takes an object with the search query and options and fetches the data
 const fetchData = async (param) => {

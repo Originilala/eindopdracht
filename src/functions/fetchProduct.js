@@ -4,15 +4,15 @@ import axios from "axios";
 import {addToCalculator} from "./addToCalculator.js";
 //Import the helper function, so an errormessage will be chosen.
 import createError from "./createError.js";
-import secretKeys from "../../notes/appkey.js";
 //Import the functions for the loader animation.
 import {addLoader, removeLoader} from "./makeLoader.js";
 //Import function, so the error message will be injected on the page.
 import {createCalError} from "./createCalculatorPage.js";
 
 //Fill in your food API key here
-//Fill in your food API ID here
-const {fooID, fooKey} = secretKeys;
+const fooKey = "";
+//Fill in your recipe API ID here
+const fooID = "";
 
 //This function takes a string with the search query and fetches the data
 const fetchProduct = async (searchQuery) => {
