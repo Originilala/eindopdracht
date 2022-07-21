@@ -2,7 +2,6 @@
 import fetchProduct from "./fetchProduct";
 //Import function, so the result of the calculation will be injected on the page.
 import {calculateCalories} from "./addToCalculator";
-import fetchData from "./fetchData";
 
 //Get the button element, so we can set a listener to it.
 const calSearchButton = document.getElementById("calorie-button");

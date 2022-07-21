@@ -13,7 +13,7 @@ export const setListeners = () => {
 
     //Then we find out if a link was clicked
     function navigateToNextPage(e) {
-        if (e.target.getAttribute('href') && e.target.tagName === "A") {
+        if (e.target.getAttribute('href') && e.target.tagName === "A" || e.target.parentElement.tagName === "A") {
             //Don't follow the link
             e.preventDefault();
             //Start the animation by closing the page by removing classes.

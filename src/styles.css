@@ -190,6 +190,7 @@ header {
     position: fixed;
     height: 100%;
     z-index: 1000;
+    opacity: 1;
     transition: height 2s ease-in-out;
 }
 
@@ -531,13 +532,26 @@ footer > section > ul > li a:visited {
 }
 
 /*the loader should only show and start spinning after 2 seconds*/
+@keyframes show-spin {
+    0% {
+        border: 0px;
+        border-bottom: 0px;
+        height: 0px;
+        width: 0px;
+    }
+    100% {
+        border: 5px solid rgba(92, 138, 149, 0.5);
+        border-bottom: 5px solid var(--lightblue);
+        height: 30px;
+        width: 30px;
+    }
+}
+
 .spin {
     position: static;
     height: 0px;
     width: 0px;
     z-index: -1;
-    transition-delay: 2s;
-    transition-property: height, width;
 }
 
 /*the loader should only show and start spinning after 2 seconds*/
@@ -546,12 +560,12 @@ footer > section > ul > li a:visited {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: spin 2.5s linear 0s infinite;
+    animation: show-spin 1.5s ease-in-out 2s forwards, spin 2.5s linear 0s infinite;
     background-color: rgba(0, 0, 0, 0.0);
-    height: 30px;
-    width: 30px;
-    border: 5px solid rgba(92, 138, 149, 0.5);
-    border-bottom: 5px solid var(--lightblue);
+    /*height: 30px;*/
+    /*width: 30px;*/
+    /*border: 5px solid rgba(92, 138, 149, 0.5);*/
+    /*border-bottom: 5px solid var(--lightblue);*/
     border-radius: 50%;
     z-index: 900;
 }
@@ -562,6 +576,8 @@ this class will be added to header for the page tranitio animation.*/
     position: absolute;
     height: 70px;
     background-color: var(--lightgrey);
+    opacity: 1;
+    transition: height 2s ease-in-out, background-color 2s ease-in-out;
 }
 
 /*this is for open page animation. this class will be added to nav bar*/
