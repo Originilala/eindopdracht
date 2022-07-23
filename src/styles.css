@@ -196,8 +196,8 @@ header {
 
 /*the nav bar has a steps animation to make the page transition animation more fluid*/
 .header-nav {
-    flex-basis: 1400px;
-    padding: 15px 0;
+    flex-basis: 100%;
+    padding: 15px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -276,32 +276,32 @@ nav > ul {
 .main-result-card {
     background-color: var(--lightgrey);
     z-index: 200; /*high z-index so it can move over hero image*/
-    cursor: pointer;
     flex-basis: 350px;
     border-radius: 1%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);;
 }
 
-.main-carousel-card > img,
+.main-carousel-card > a > img,
 .main-carousel-card h4,
-.main-result-card > img,
-.main-result-card > h4 {
+.main-result-card > a > img,
+.main-result-card h4 {
     display: block; /*this is so every element will go under the next in the card*/
     width: 100%;
     height: auto;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .main-carousel-card h4,
-.main-result-card > h4 {
+.main-result-card h4 {
     height: 25px;
     padding: 0 10px;
     margin-top: 10px;
     overflow: hidden; /*second and third line of text will not be shown*/
 }
 
-.main-carousel-card > img,
-.main-result-card > img {
+.main-carousel-card > a > img,
+.main-result-card > a > img {
     border-radius: 1% 1% 0 0;
     object-fit: cover;
     position: center; /*this makes the pictures look slightly better*/
@@ -583,6 +583,8 @@ this class will be added to header for the page tranitio animation.*/
 /*this is for open page animation. this class will be added to nav bar*/
 .open-nav {
     transform: scaleY(100%);
+    background-color: rgba(0,0,0,0.0);
+    flex-basis: 1400px;
 }
 
 /*----------------7. Media Queries -------------------------------------------------------*/
@@ -609,7 +611,7 @@ this class will be added to header for the page tranitio animation.*/
 
     .main-carousel {
         flex-wrap: nowrap;
-        gap: 0px;
+        gap: 0;
     }
 
     .main-search-bar {
@@ -642,7 +644,7 @@ this class will be added to header for the page tranitio animation.*/
     }
 
     /*the image also has to increase, otherwise the text in the card will have to much white space*/
-    .main-carousel article:nth-child(2) > img {
+    .main-carousel article:nth-child(2) > a > img {
         object-fit: cover;
         height: 225px;
     }

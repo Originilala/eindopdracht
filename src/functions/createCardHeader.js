@@ -11,8 +11,6 @@ import {createEmptyCard} from "./createCard";
 
 //Get the html elements where the data will be injected.
 const cardCarousel = document.getElementById('main-carousel');
-const headerAnim = document.getElementById('header-anim');
-const navAnim = document.getElementById('nav-anim');
 
 //Fill in your recipe API key here
 const recKey = "";
@@ -68,8 +66,12 @@ const createCardHeader = (recipes) => {
             //Inject every entry as a card and also add the icon and the URL in the id tag (not in the anchor tag).
             cardCarousel.innerHTML += `
                 <article class="main-carousel-card" id="${link}">
-                    <img src="${entry.recipe.image}" alt="${entry.recipe.label}"/>
-                    <h4>${entry.recipe.label}</h4>
+                    <a href="${link}">
+                        <img src="${entry.recipe.image}" alt="${entry.recipe.label}"/>
+                    </a>
+                    <a href="${link}">
+                        <h4>${entry.recipe.label}</h4>
+                    </a>
                     <div>
                         <p><strong>${(Math.round((entry.recipe.calories) * 0.01) / 0.01)}</strong> calories | <strong>${entry.recipe.ingredients.length}</strong> ingredients</p>
                         <p><img src="${timeIcon}" alt="time icon" id="time-icon"><strong>    ${entry.recipe.totalTime}</strong> min</p>
@@ -77,30 +79,6 @@ const createCardHeader = (recipes) => {
                 </article>
             `
         }
-    })
-    //Add a listener, so we can intercept clicks, so we can add a page transition animation.
-    //First find every card by class
-    const newPages = document.querySelectorAll(".main-carousel-card");
-    //Loop through every card and add an event listener.
-    newPages.forEach((entry) => {
-        entry.addEventListener("click", (e) => {
-            //Start the animation with a click by removing a class.
-            headerAnim.removeAttribute('class');
-            navAnim.classList.remove('open-nav');
-            //The URL for the link was stored in de id tag, not in the anchor tag.
-            const goTo = e.currentTarget.id;
-            //Switch page after two seconds.
-            setTimeout(() => {
-                window.location.replace(goTo);
-            }, 2000)
-            //Override other clicks
-        }, true);
-        //With the right mouse button click, the page opens in a new tab.
-        entry.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-            const goTo = e.currentTarget.id;
-            window.open(goTo, "_blank");
-        }, true);
     })
 }
 
