@@ -1,7 +1,7 @@
 //No imports. This file is used for injecting data on the page.
 //Get the table elements where the data will be injected.
-const showTable = document.getElementById('main-calorie-count');
-const showProduct = document.getElementById('main-calorie-product');
+const showTable = document.getElementById("main-calorie-count");
+const showProduct = document.getElementById("main-calorie-product");
 
 //This function takes the product name (string) and the portion size (integer).
 export const createCalProduct = (label, quantity) => {
@@ -13,6 +13,7 @@ export const createCalProduct = (label, quantity) => {
             <th>Label</th>
         </tr>
     `
+    ;
     showProduct.innerHTML += `
         <tr>
             <td>${label}</td>
@@ -20,6 +21,7 @@ export const createCalProduct = (label, quantity) => {
             <td>gram</td>
         </tr>
     `
+    ;
 }
 
 //This function takes an array with all the calculated values.
@@ -32,6 +34,7 @@ export const createCalList = (entries) => {
             <th>Label</th>
         </tr>
     `
+    ;
     showTable.innerHTML = `
         <tr>
             <th>Product</th>
@@ -40,6 +43,7 @@ export const createCalList = (entries) => {
             <th>Carbs</th>
         </tr>
     `
+    ;
     //Then show the values of each entry
     //But first we declare variables to keep track of the total amount.
     let totalCalories = 0;
@@ -70,6 +74,7 @@ export const createCalList = (entries) => {
             <td>${totalCarbs} g</td>
         </tr>
     `
+    ;
 }
 
 //This function takes an error message(string) and injects it on the page in the table.
@@ -81,6 +86,7 @@ export const createCalError = (error) => {
             <th>Label</th>
         </tr>
     `
+    ;
     showProduct.innerHTML += `
         <tr>
             <td></td>
@@ -88,4 +94,5 @@ export const createCalError = (error) => {
            <td></td>
         </tr>
     `
+    ;
 }

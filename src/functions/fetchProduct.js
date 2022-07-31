@@ -31,7 +31,7 @@ const fetchProduct = async (searchQuery) => {
                 //A product name is expected for the query
                 ingr: searchQuery
             }
-        })
+        });
         //Get the first hint from the response of the API call and add to calculator and inject on the page.
         addToCalculator(response.data.hints[0]);
     } catch (err) {
@@ -40,7 +40,7 @@ const fetchProduct = async (searchQuery) => {
         //We still have to use the variable err in some way to prevent bugs.
         const empty = err;
     } finally {
-        //In every case (error or result) stop the loader animation.
+        //In any case (error or result) stop the loader animation.
         removeLoader();
     }
 }
@@ -62,7 +62,7 @@ const fetchProduct2 = async (searchQuery) => {
                 //A barcode is expected for the query
                 upc: searchQuery
             }
-        })
+        });
         //Get the first hint from the response of the API call and add to calculator and inject on the page.
         addToCalculator(response.data.hints[0]);
     } catch (err) {

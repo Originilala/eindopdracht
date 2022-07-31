@@ -25,7 +25,7 @@ const fetchData = async (param) => {
             params: {
                 app_key: recKey,
                 app_id: recID,
-                type: 'public',
+                type: "public",
                 q: param.queryVal,
                 //If this option is empty then it will have the value null, so no filter will be applied.
                 mealType: param.mealTypeVal ? param.mealTypeVal : null,
@@ -33,7 +33,7 @@ const fetchData = async (param) => {
                 diet: param.dietTypeVal ? param.dietTypeVal : null,
                 time: param.timeVal ? param.timeVal : null,
             }
-        })
+        });
         //Get the hits from the response of the API call and put in a variable.
         const recipes = response.data.hits;
         //Check if there is a response or results

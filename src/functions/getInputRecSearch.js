@@ -2,23 +2,23 @@
 import fetchData from "./fetchData.js";
 
 //Get the input element, so we access the values.
-const recipeSearch = document.getElementById('input-field');
-const mealField = document.getElementById('meal-field');
-const cuisineField = document.getElementById('cuisine-field');
-const dietField = document.getElementById('diet-field');
-const timeField = document.getElementById('time-field');
+const recipeSearch = document.getElementById("input-field");
+const mealField = document.getElementById("meal-field");
+const cuisineField = document.getElementById("cuisine-field");
+const dietField = document.getElementById("diet-field");
+const timeField = document.getElementById("time-field");
 
 //Get the button element, so we can set a listener to it.
-const searchButton = document.getElementById('search-button');
-const jumpButton = document.getElementById('main-hero-link');
+const searchButton = document.getElementById("search-button");
+const jumpButton = document.getElementById("main-hero-link");
 
 //Set a listener on the button
 jumpButton.addEventListener("click", function jumpTo() {
     //Get the (vertical) location of the ribbon (where the input fields are) and put it in a variable.
-    const goToSearch = document.getElementById('main-ribbon').offsetTop;
+    const goToSearch = document.getElementById("main-ribbon").offsetTop;
     //Scroll/jump to the location (of the input fields)
     window.scrollTo(0, goToSearch);
-})
+});
 
 //Set a listener on the button
 searchButton.addEventListener("click", function startApp() {
@@ -36,7 +36,7 @@ searchButton.addEventListener("click", function startApp() {
 
 //Do the same when enter is pressed
 recipeSearch.addEventListener("keydown", (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
         //Get all the input values on a mouse click.
         const searchQuery = {
             queryVal: recipeSearch.value,

@@ -11,8 +11,8 @@ const calSearchBar = document.getElementById("input-field-calorie");
 const calAddBar = document.getElementById("servings-field");
 
 //Set listeners on the buttons
-calSearchButton.addEventListener('click', handleClick);
-calAddButton.addEventListener('click', handleClick2);
+calSearchButton.addEventListener("click", handleClick);
+calAddButton.addEventListener("click", handleClick2);
 
 //If the search button is clicked we will fetch data with the input
 function handleClick() {
@@ -23,7 +23,7 @@ function handleClick() {
 
 //Do the same when enter is pressed
 calSearchBar.addEventListener("keydown", (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === "Enter") {
         fetchProduct(calSearchBar.value);
         //Empty the input field.
         calSearchBar.value = '';
@@ -40,7 +40,7 @@ function handleClick2() {
 
 //Do the same when enter is pressed
 calAddBar.addEventListener("keydown", (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === "Enter") {
         //If no value is given or it is below zero, we will multiply with 1, effectively not multiplying but adding the product to calculator.
         calculateCalories(calAddBar.value > 0 ? calAddBar.value : 1);
         //Empty the input field.

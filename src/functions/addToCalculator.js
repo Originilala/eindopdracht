@@ -1,5 +1,5 @@
 //Import the functions for injecting the result on the website page.
-import {createCalProduct, createCalList} from "./createCalculatorPage.js"
+import {createCalProduct, createCalList} from "./createCalculatorPage.js";
 
 //Declaring arrays outside the functions, so we can use them anywhere.
 let totalServing = [];
@@ -24,7 +24,7 @@ export const addToCalculator = (product) => {
 //It takes the amount of servings (integer) and multiplies the values in the array.
 export const calculateCalories = (servings) => {
     //Loop through the array and multiply the values with the portions/servings.
-    const newArr = prodArr.map((element) => {
+    prodArr.map((element) => {
         //Push into a new array
         totalServing.push({
             product: element.product,
@@ -32,7 +32,7 @@ export const calculateCalories = (servings) => {
             fat: (element.fat * servings),
             carb: (element.carb * servings)
         });
-    })
+    });
     //Clear the first array, the user first has to do another fetch, before calculating anything again.
     prodArr = [];
     //Inject the data on the page with helper function.

@@ -26,8 +26,9 @@ export const createCard = (recipes) => {
                         <p><img src="${timeIcon}" alt="time icon" id="time-icon"><strong>    ${entry.recipe.totalTime}</strong> min</p>
                     </div>
                 </article>
-            `
-    })
+        `
+        ;
+    });
 }
 
 //This function takes an error message(string) and injects it on the page

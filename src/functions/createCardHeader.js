@@ -1,16 +1,16 @@
 //Import an icon, so it can be injected on the page.
 import timeIcon from "../assets/icons/time.png";
-//Import the functions for the loader animation.
-import {addLoader, removeLoader} from "./makeLoader.js";
 //The recipe data is called with axios.
 import axios from "axios";
+//Import the functions for the loader animation.
+import {addLoader, removeLoader} from "./makeLoader.js";
 //Import the helper function, so an errormessage will be chosen.
 import createError from "./createError.js";
 //Import function, so the error message will be injected on the page.
 import {createEmptyCard} from "./createCard";
 
 //Get the html elements where the data will be injected.
-const cardCarousel = document.getElementById('main-carousel');
+const cardCarousel = document.getElementById("main-carousel");
 
 //Fill in your recipe API key here
 const recKey = "";
@@ -28,7 +28,7 @@ const fetchDataHeader = async (param) => {
         //Fetch the data with Axios asynchronously.
         const response = await axios.get(`${apiUrl}${endpoint}`, {
             params: {
-                type: 'public',
+                type: "public",
                 q: param.queryVal,
                 app_key: recKey,
                 app_id: recID,
@@ -38,7 +38,7 @@ const fetchDataHeader = async (param) => {
                 mealType: param.mealTypeVal ? param.mealTypeVal : null,
                 time: param.timeVal ? param.timeVal : null
             }
-        })
+        });
         //Get the hits from the response of the API call and put in a variable.
         const recipes = response.data.hits;
         //Give the data to the function as a parameter to inject the data on the page.
@@ -78,8 +78,9 @@ const createCardHeader = (recipes) => {
                     </div>
                 </article>
             `
+            ;
         }
-    })
+    });
 }
 
 export default fetchDataHeader;

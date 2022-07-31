@@ -5,15 +5,15 @@
 import {setListeners} from "./functions/switchPage.js";
 import openPage from "./functions/pageTransitionAnim.js";
 import "./functions/getInputRecSearch.js";
-import fetchDataHeader from "./functions/createCardHeader";
+import fetchDataHeader from "./functions/createCardHeader.js";
 
 //Search for the recipe roti for the 3 results in the carousel, because the first results shows cutlery, pots and pans.
 const searchObject = {
-    queryVal: 'basic roti',
-    mealTypeVal: '',
-    cuisineTypeVal: '',
-    dietTypeVal: '',
-    timeVal: ''
+    queryVal: "basic roti",
+    mealTypeVal: "",
+    cuisineTypeVal: "",
+    dietTypeVal: "",
+    timeVal: ""
 }
 
 //Fetch the results for in the carousel

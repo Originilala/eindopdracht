@@ -1,11 +1,11 @@
 //The product data is called with axios.
 import axios from "axios";
-//Import the helper function, so an errormessage will be chosen.
-import createError from "./createError.js";
 //Import the functions for the loader animation.
 import {addLoader, removeLoader} from "./makeLoader.js";
 //Import function, so the result or error will be injected on the page.
 import {createRecipePage, createRecipePage2} from "./createRecipePage.js";
+//Import the helper function, so an errormessage will be chosen.
+import createError from "./createError.js";
 
 //Fill in your recipe API key here
 const recKey = "";
@@ -27,7 +27,7 @@ const fetchRecipePage = async (id) => {
                 app_key: recKey,
                 type: "public"
             }
-        })
+        });
         //Give the data to the function as a parameter to inject the data on the page.
         createRecipePage(response.data);
     } catch (err) {
